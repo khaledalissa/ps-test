@@ -16,7 +16,7 @@ function preload() {
 }
 
 imagepack = preload(
-    'http://vignette1.wikia.nocookie.net/hunterxhunter/images/b/b4/Gon-2011.png/revision/latest/scale-to-width-down/200?cb=20120115022050',
+    // 'http://vignette1.wikia.nocookie.net/hunterxhunter/images/b/b4/Gon-2011.png/revision/latest/scale-to-width-down/200?cb=20120115022050',
     'http://img01.deviantart.net/af38/i/2014/347/3/7/hisoka_8__hxh__by_acetaris-d89cojb.jpg',
     'https://s-media-cache-ak0.pinimg.com/736x/1a/53/4f/1a534f5b19f59e8fc559f5515e9fe2a7.jpg',
     'http://img1.ak.crunchyroll.com/i/croll_manga/777c3c4a13c4d93a1ff3cbad4d51433e_1382589268_large.jpg'
