@@ -1,4 +1,36 @@
+
+function preload() {
+    images = new Array();
+    for (i = 0; i < preload.arguments.length; i++) {
+        images[i] = new Image()
+        images[i].src = preload.arguments[i]
+        images[i].x = 450
+        images[i].y = 800
+        images[i].w = 450
+        images[i].h = 800        
+
+
+    }
+
+    return images;
+}
+
+imagepack = preload(
+    'http://vignette1.wikia.nocookie.net/hunterxhunter/images/b/b4/Gon-2011.png/revision/latest/scale-to-width-down/200?cb=20120115022050',
+    'http://img01.deviantart.net/af38/i/2014/347/3/7/hisoka_8__hxh__by_acetaris-d89cojb.jpg',
+    'http://vignette3.wikia.nocookie.net/onepiece/images/e/e5/Monkey_D._Luffy_Anime_Pre_Timeskip_Infobox.png/revision/latest/scale-to-width-down/250?cb=20151110155156'
+    // "http://domain.tld/gallery/image-002.jpg",
+    // "http://domain.tld/gallery/image-003.jpg"
+)
+
+
+
+
+
 var pswpElement = document.querySelectorAll('.pswp')[0];
+
+
+
 
 // build items array
 var items = [
@@ -66,20 +98,20 @@ pswp.listen('doubleTap', function(pt) {
 });
 
 $element_changed = false;
-pswp.listen('afterChange', function() { 
+// pswp.listen('afterChange', function() { 
     
-    if($element_changed == true && pswp.getCurrentIndex() != $index)
-    {
-        $element_changed = false;
-        pswp.items[$index].src = original_items[$index].src
-        pswp.invalidateCurrItems();
-        pswp.updateSize(true);   
-        console.log('after'); 
-         console.log($index);
+//     if($element_changed == true && pswp.getCurrentIndex() != $index)
+//     {
+//         $element_changed = false;
+//         pswp.items[$index].src = original_items[$index].src
+//         pswp.invalidateCurrItems();
+//         pswp.updateSize(true);   
+//         console.log('after'); 
+//          console.log($index);
         
-    }
-    // console.log('after');
-});
+//     }
+//     // console.log('after');
+// });
 
 // pswp.listen('beforeChange', function() { 
 //     console.log('before');
@@ -94,12 +126,13 @@ pswp.framework.bind( pswp.scrollWrap /* bind on any element of gallery */, 'pswp
     $index = pswp.getCurrentIndex();
     console.log($index);
 
-    pswp.items[pswp.getCurrentIndex()].src = 'http://vignette1.wikia.nocookie.net/hunterxhunter/images/b/b4/Gon-2011.png/revision/latest/scale-to-width-down/200?cb=20120115022050'
+    pswp.items[pswp.getCurrentIndex()] = imagepack[Math.floor(Math.random()*items.length)];
     console.log('tapped');
     pswp.invalidateCurrItems();
     pswp.updateSize(true);
 
-    
+
+
     // pswp.next();
     // e.detail.origEvent  // original event that finished tap (e.g. mouseup or touchend)
     // e.detail.target // e.target of original event
